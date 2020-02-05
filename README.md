@@ -24,11 +24,11 @@ First, import the Quaternions module with
 using Quaternions
 ```
 
-To create a quaternion, specify the coefficients `a`, `b`, `c`, and `d`.
+To create a quaternion, specify the coefficients `a`, `b`, `c`, and `d` in the constructor `Quaternion(a,b,c,d)`:
 ```julia
 q = Quaternion(1,2,3,4)
 ```
-Gives the output `Quaternion{Int64}: 1 + 2i + 3j + 4k`
+This gives the output `Quaternion{Int64}: 1 + 2i + 3j + 4k`
 
 Quaternions may be created with coefficients of any subtype of Julia's `Real` type. The type can be specified manually, or will be inferred from the promotion of the given arguments.
 
@@ -58,8 +58,7 @@ The functions `conj`, `abs`, `abs2`, and `inv` are also defined. The comparison 
 ```julia
 conj(Quaternion(1,2,3,4))
 ```
-`Quaternion{Int64}: 1 + -2i + -3j + -4k`
-
+`Quaternion{Int64}: 1 - 2i - 3j - 4k`
 
 ```julia
 qi * qj
