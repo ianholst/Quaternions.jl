@@ -1,0 +1,7 @@
+name = "Quaternions"
+uuid = "23f9fff6-89d5-4db2-be6a-622a963fdd45"
+authors = ["Ian Holst <ianholst@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
