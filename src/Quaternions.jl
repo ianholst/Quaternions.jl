@@ -42,7 +42,17 @@ Base.:/(q::Quaternion, s::Real) = 1/s * q
 Base.:/(q::Quaternion, p::Quaternion) = q * inv(p)
 
 # Custom printing
-Base.show(io::IO, q::Quaternion) = print(io, typeof(q), ": ", q.a, " + ", q.b, "i + ", q.c, "j + ", q.d, "k")
+Base.show(io::IO, q::Quaternion) = print(io, typeof(q), ": ",
+    q.a,
+    q.b>=0 ? " + " : " - ",
+    abs(q.b),
+    "i",
+    q.c>=0 ? " + " : " - ",
+    abs(q.c),
+    "j",
+    q.d>=0 ? " + " : " - ",
+    abs(q.d),
+    "k")
 
 # Comparison
 function Base.:(==)(q::Quaternion{T1}, p::Quaternion{T2}) where {T1<:Real, T2<:Real}
@@ -59,7 +69,6 @@ end
 qi = Quaternion{Int64}(0,1,0,0)
 qj = Quaternion{Int64}(0,0,1,0)
 qk = Quaternion{Int64}(0,0,0,1)
-
 
 export Quaternion, qi, qj, qk
 
